@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旋转立方体</title>
+		<style>
+			p{
+				margin:0;
+				padding:0;
+			}
+			.box{
+				width:400px;
+				height:400px;
+				border:2px solid #000;
+				transform-style:preserve-3d;
+				perspective:950px;
+				margin:100px auto;
+			}
+			.cube{
+				width:100px;
+				height:100px;
+				margin:150px auto;
+				transform-style:preserve-3d;
+				transform-origin: center center 50px;
+			}
+			p{
+				width:100px;
+				height:100px;
+				font-size:50px;
+				line-height:100px;
+				text-align:center;
+			}
+			.p1{
+				background:#FFE4C4;
+				position:absolute;
+			}
+			.p2{
+				position:absolute;
+				background:#5F9EA0;
+				transform-origin:top;
+				transform:rotatex(90deg);
+			}
+			.p3{
+				background:#CCCCCC;
+				position:absolute;
+				transform-origin:right;
+				transform:rotatey(90deg);
+			}
+			.p4{
+				background:#008000;
+				position:absolute;
+				transform-origin:left;
+				transform:rotatey(-90deg);
+			}
+			.p5{
+				background:#FFD700;
+				position:absolute;
+				transform-origin:bottom;
+				transform:rotatex(-90deg);
+			}
+			.p6{
+				background:#8B008B;
+				position:absolute;
+				transform:translatez(100px);
+			}
+			.box:hover .cube{
+				animation:5s name infinite linear both;
+			}
+			@keyframes name{
+				to{
+					transform:rotatex(720deg) rotateY(360deg) rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="cube">
+				<p class="p1">1</p>
+				<p class="p2">2</p>
+				<p class="p3">3</p>
+				<p class="p4">4</p>
+				<p class="p5">5</p>
+				<p class="p6">6</p>
+			</div>
+		</div>
+	</body>
+</html>
